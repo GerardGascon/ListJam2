@@ -45,7 +45,7 @@ public class Thunder : MonoBehaviour{
 
     private void LightningStrike(){
         //ScreenshakeHandler.AddScreenShake(5, 5, 0.5f);
-        ScreenShake.Shake(5, .5f);
+        ScreenShake.Shake(15, .5f);
 
         //thunderSound.pitch = Random.Range(0.5f, 1f);
         //thunderSound.Play();
