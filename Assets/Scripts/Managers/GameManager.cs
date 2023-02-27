@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 [System.Serializable]
 public enum OrbTypes {
+	None,
 	Blue,
 	Red,
 	InvertedControls,
@@ -20,8 +21,9 @@ public enum OrbTypes {
 
 public class GameManager : MonoBehaviour {
 
-	[SerializeField] GenericDictionary<OrbTypes, UnityEvent> orbEffects;
-	[SerializeField] OrbTypes currentType;
+	[SerializeField] GenericDictionary<OrbTypes, UnityEvent> orbStartEffects;
+	[SerializeField] GenericDictionary<OrbTypes, UnityEvent> orbEndEffects;
+	[SerializeField] OrbTypes currentType = OrbTypes.None;
 	
 	// Start is called before the first frame update
 	void Start(){
@@ -33,8 +35,16 @@ public class GameManager : MonoBehaviour {
 		
 	}
 
+	[Space, SerializeField] OrbTypes forceEventChangeType = OrbTypes.None;
+	[ButtonMethod]
+	void ForceEventChange() {
+		if (!Application.isPlaying) return;
+		ChangeEventCall(forceEventChangeType);
+	}
+	
 	void ChangeEventCall(OrbTypes type) {
+		if(currentType != OrbTypes.None) orbEndEffects[currentType].Invoke();
 		currentType = type;
-		orbEffects[currentType].Invoke();
+		if(type != OrbTypes.None) orbStartEffects[currentType].Invoke();
 	}
 }
