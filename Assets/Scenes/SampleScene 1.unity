@@ -3006,9 +3006,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0828125
-    width: 1
-    height: 0.83313686
+    y: 0.053577915
+    width: 0.28281042
+    height: 0.3289722
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -4733,9 +4733,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   acceleration: 0.05
+  airAcceleration: 0.1
+  iceAcceleration: 0.1
   flipSmooth: 0.05
   jumpForce: 40
   gradualJumpMultiplier: 0.5
+  iceMask:
+    serializedVersion: 2
+    m_Bits: 0
   groundMask:
     serializedVersion: 2
     m_Bits: 8
