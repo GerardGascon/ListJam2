@@ -480,13 +480,269 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orbStartEffects:
-    list: []
+    list:
+    - Key: 8
+      Value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 790052799}
+            m_TargetAssemblyTypeName: TilemapActivation, Assembly-CSharp
+            m_MethodName: ChangeTilemapState
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+    - Key: 1
+      Value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 130450764}
+            m_TargetAssemblyTypeName: UnityEngine.MonoBehaviour, UnityEngine
+            m_MethodName: CancelInvoke
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+    - Key: 2
+      Value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 918376447}
+            m_TargetAssemblyTypeName: TilemapActivation, Assembly-CSharp
+            m_MethodName: ChangeTilemapState
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+    - Key: 3
+      Value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1251297679}
+            m_TargetAssemblyTypeName: TilemapActivation, Assembly-CSharp
+            m_MethodName: ChangeTilemapState
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+    - Key: 4
+      Value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 832780278}
+            m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+            m_MethodName: InvertControls
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+    - Key: 6
+      Value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 832780278}
+            m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+            m_MethodName: ChangeGravity
+            m_Mode: 4
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 7
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+    - Key: 5
+      Value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 832780278}
+            m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+            m_MethodName: ChangeGravity
+            m_Mode: 4
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 17
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+    - Key: 7
+      Value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 49042033}
+            m_TargetAssemblyTypeName: Thunder, Assembly-CSharp
+            m_MethodName: DarkRoom
+            m_Mode: 4
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0.05
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
     keyCollision: 0
   orbEndEffects:
-    list: []
+    list:
+    - Key: 8
+      Value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 790052799}
+            m_TargetAssemblyTypeName: TilemapActivation, Assembly-CSharp
+            m_MethodName: ChangeTilemapState
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Key: 1
+      Value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 130450764}
+            m_TargetAssemblyTypeName: TilemapActivation, Assembly-CSharp
+            m_MethodName: ChangeTilemapState
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Key: 2
+      Value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 918376447}
+            m_TargetAssemblyTypeName: TilemapActivation, Assembly-CSharp
+            m_MethodName: ChangeTilemapState
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Key: 3
+      Value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1251297679}
+            m_TargetAssemblyTypeName: TilemapActivation, Assembly-CSharp
+            m_MethodName: ChangeTilemapState
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Key: 4
+      Value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 832780278}
+            m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+            m_MethodName: InvertControls
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Key: 6
+      Value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 832780278}
+            m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+            m_MethodName: ResetGravity
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Key: 5
+      Value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 832780278}
+            m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+            m_MethodName: ResetGravity
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Key: 7
+      Value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 49042033}
+            m_TargetAssemblyTypeName: Thunder, Assembly-CSharp
+            m_MethodName: LightRoom
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
     keyCollision: 0
   currentType: 0
-  forceEventChangeType: 8
+  forceEventChangeType: 4
 --- !u!4 &75232999
 Transform:
   m_ObjectHideFlags: 0
@@ -514,6 +770,7 @@ GameObject:
   - component: {fileID: 130450763}
   - component: {fileID: 130450762}
   - component: {fileID: 130450761}
+  - component: {fileID: 130450764}
   m_Layer: 3
   m_Name: Blue
   m_TagString: Untagged
@@ -1265,6 +1522,20 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &130450764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130450759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ebb6b9dbeda6f142b6a9515f6b253e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabledTransparency: 0.5
+  transitionDuration: 0.5
 --- !u!1 &182317453
 GameObject:
   m_ObjectHideFlags: 0
@@ -2774,10 +3045,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0.0828125
-    width: 1
-    height: 0.83313686
+    x: 0.07026071
+    y: 0
+    width: 0.85952276
+    height: 0.9998184
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -3582,6 +3853,7 @@ GameObject:
   - component: {fileID: 790052797}
   - component: {fileID: 790052796}
   - component: {fileID: 790052798}
+  - component: {fileID: 790052799}
   m_Layer: 3
   m_Name: Ice
   m_TagString: Untagged
@@ -4187,6 +4459,20 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!114 &790052799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790052794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ebb6b9dbeda6f142b6a9515f6b253e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabledTransparency: 0
+  transitionDuration: 0.5
 --- !u!1 &809051941
 GameObject:
   m_ObjectHideFlags: 0
@@ -4706,6 +4992,7 @@ GameObject:
   - component: {fileID: 918376446}
   - component: {fileID: 918376445}
   - component: {fileID: 918376444}
+  - component: {fileID: 918376447}
   m_Layer: 3
   m_Name: Red
   m_TagString: Untagged
@@ -5329,6 +5616,20 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &918376447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918376442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ebb6b9dbeda6f142b6a9515f6b253e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabledTransparency: 0.5
+  transitionDuration: 0.5
 --- !u!1 &971952096
 GameObject:
   m_ObjectHideFlags: 0
@@ -26668,6 +26969,7 @@ GameObject:
   - component: {fileID: 1251297678}
   - component: {fileID: 1251297677}
   - component: {fileID: 1251297676}
+  - component: {fileID: 1251297679}
   m_Layer: 3
   m_Name: Purple
   m_TagString: Untagged
@@ -27331,6 +27633,20 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1251297679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251297674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ebb6b9dbeda6f142b6a9515f6b253e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabledTransparency: 0.5
+  transitionDuration: 0.5
 --- !u!1 &1281979634
 GameObject:
   m_ObjectHideFlags: 0
@@ -28220,7 +28536,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 170
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
