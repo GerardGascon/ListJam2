@@ -52,8 +52,8 @@ public class PlayerController : MonoBehaviour {
 		
 		_cameraTarget = new GameObject("Camera Target").transform;
 		vCam.m_Follow = _cameraTarget;
-
-		ResetSpeed();
+		
+		_currentSpeed = speed;
 	}
 
 	void Update() {
@@ -121,18 +121,10 @@ public class PlayerController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.CompareTag("Ghost")) {
+			col.GetComponent<GhostController>().Kill();
 			_anim.SetTrigger(Die);
 			_dead = true;
 			ScreenShake.Shake(20f, .5f);
 		}
 	}
-
-#region OrbPowerups
-	public void ResetSpeed() {
-		_currentSpeed = speed;
-	}
-	public void SetSpeed(float newSpeed) {
-		_currentSpeed = newSpeed;
-	}
-#endregion
 }
