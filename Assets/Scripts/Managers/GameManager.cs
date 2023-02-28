@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour {
 		OrbTypes selected;
 		Array values = Enum.GetValues(typeof(OrbTypes));
 		do {
-			selected = (OrbTypes)values.GetValue(Random.Range(0, values.Length));
+			selected = (OrbTypes)values.GetValue(Random.Range(1, values.Length));
 		} while (selected == currentType || selected == _lastType);
 		
 		ChangeEventCall(selected);
