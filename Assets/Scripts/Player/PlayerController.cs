@@ -12,10 +12,16 @@ public class PlayerController : MonoBehaviour {
 	[Header("Stats")]
 	[SerializeField] float speed = 50f;
 	float _currentSpeed;
-	[SerializeField, Range(0f, .5f)] float acceleration = .1f;
+	[SerializeField, Range(0f, 2f)] float acceleration = .1f;
+	[SerializeField, Range(0f, 2f)] float airAcceleration = .1f;
+	[SerializeField, Range(0f, 2f)] float iceAcceleration = .1f;
 	[SerializeField, Range(0f, .5f)] float flipSmooth = .1f;
 	[SerializeField] float jumpForce = 10f;
 	[SerializeField, Range(0f, 1f)] float gradualJumpMultiplier = .5f;
+
+	[Space]
+	[SerializeField] LayerMask iceMask;
+	bool _onIce;
 	
 	Vector2 _input;
 	float _xVelocity, _flipVelocity;
@@ -81,6 +87,7 @@ public class PlayerController : MonoBehaviour {
 		transform.localScale = localScale;
 
 		_isGrounded = Physics2D.OverlapBox(feetPos.position, new Vector2(feetWidth, feetHeight), 0f, groundMask);
+		_onIce = Physics2D.OverlapBox(feetPos.position, new Vector2(feetWidth, feetHeight), 0f, iceMask);
 		_anim.SetBool(Grounded, _isGrounded);
 		if (_isGrounded && _rb2d.velocity.y <= 0f) _coyoteTime = coyoteTime;
 		
@@ -93,8 +100,14 @@ public class PlayerController : MonoBehaviour {
 
 	void FixedUpdate() {
 		if (_dead) return;
-		
-		_rb2d.velocity = new Vector2(Mathf.SmoothDamp(_rb2d.velocity.x, _input.x * _currentSpeed * _controlsDirection, ref _xVelocity, acceleration), _rb2d.velocity.y);
+
+		if (_onIce) {
+			_rb2d.velocity = new Vector2(Mathf.SmoothDamp(_rb2d.velocity.x, _input.x * _currentSpeed * _controlsDirection, ref _xVelocity, iceAcceleration), _rb2d.velocity.y);
+		}else if (_isGrounded) {
+			_rb2d.velocity = new Vector2(Mathf.SmoothDamp(_rb2d.velocity.x, _input.x * _currentSpeed * _controlsDirection, ref _xVelocity, acceleration), _rb2d.velocity.y);
+		} else {
+			_rb2d.velocity = new Vector2(Mathf.SmoothDamp(_rb2d.velocity.x, _input.x * _currentSpeed * _controlsDirection, ref _xVelocity, airAcceleration), _rb2d.velocity.y);
+		}
 		_anim.SetFloat(Speed, Mathf.Abs(_rb2d.velocity.x));
 
 		if (_coyoteTime > 0f && _jumpBuffer > 0f) {

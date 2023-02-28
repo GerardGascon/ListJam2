@@ -2288,7 +2288,7 @@ GameObject:
   - component: {fileID: 790052796}
   - component: {fileID: 790052798}
   - component: {fileID: 790052799}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Ice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2734,12 +2734,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   acceleration: 0.05
+  airAcceleration: 0.3
+  iceAcceleration: 0.6
   flipSmooth: 0.05
   jumpForce: 35
   gradualJumpMultiplier: 0.5
+  iceMask:
+    serializedVersion: 2
+    m_Bits: 64
   groundMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 72
   feetHeight: 0.125
   feetWidth: 1.5
   feetPos: {fileID: 2122059437}
