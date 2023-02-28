@@ -21,7 +21,7 @@ public class Thunder : MonoBehaviour{
     // Start is called before the first frame update
     void Start(){
         orgLightColor = globalLight.color;
-        orgIntensity = globalLight.intensity;
+        _defaultIntensity = orgIntensity = globalLight.intensity;
         orgCamBGColor = camera.backgroundColor;
 
         timer = intervalTime;
@@ -68,5 +68,13 @@ public class Thunder : MonoBehaviour{
         globalLight.color = orgLightColor;
         camera.backgroundColor = orgCamBGColor;
         globalLight.intensity = orgIntensity;
+    }
+
+    float _defaultIntensity;
+    public void DarkRoom(float intensity) {
+        orgIntensity = intensity;
+    }
+    public void LightRoom() {
+        orgIntensity = _defaultIntensity;
     }
 }

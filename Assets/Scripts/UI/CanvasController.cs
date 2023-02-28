@@ -26,5 +26,6 @@ public class CanvasController : MonoBehaviour {
 			yield return new WaitForSeconds(1f);
 		}
 		GameManager.instance.SelectRandomEffect();
+		StartCoroutine(Countdown());
 	}
 }

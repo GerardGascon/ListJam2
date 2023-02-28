@@ -17,8 +17,8 @@ MonoBehaviour:
     characterName: 
     characterImage: {fileID: 21300000, guid: d7da53da78abe7540aa5534b65d469ea, type: 3}
     sentence: <sp:15>Once upon a time, there was a little <color=#0069a7>troll</color>
-      who lived on a great snowy mountain where many legends and <color=#ff8c6a>treasures</color>
-      were spoken of.
+      who lived on a great snowy mountain where many <color=#61a021>legends</color>
+      and <color=#ff8c6a>treasures</color> were spoken of.
   - displayName: 0
     characterName: 
     characterImage: {fileID: 21300000, guid: bc15a50a5454662419a9982228a939a9, type: 3}

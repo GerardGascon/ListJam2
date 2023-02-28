@@ -49,9 +49,11 @@ public class PlayerController : MonoBehaviour {
 	void Awake() {
 		_rb2d = GetComponent<Rigidbody2D>();
 		_anim = GetComponent<Animator>();
+
+		_defaultGravity = _rb2d.gravityScale;
 		
-		_cameraTarget = new GameObject("Camera Target").transform;
-		vCam.m_Follow = _cameraTarget;
+		//_cameraTarget = new GameObject("Camera Target").transform;
+		//vCam.m_Follow = _cameraTarget;
 		
 		_currentSpeed = speed;
 	}
@@ -68,8 +70,8 @@ public class PlayerController : MonoBehaviour {
 		
 		_input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 		_facingDirection = _input.x switch {
-			> 0f => 1,
-			< 0f => -1,
+			> 0f =>  _controlsDirection,
+			< 0f => -_controlsDirection,
 			_ => _facingDirection
 		};
 
@@ -92,7 +94,7 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate() {
 		if (_dead) return;
 		
-		_rb2d.velocity = new Vector2(Mathf.SmoothDamp(_rb2d.velocity.x, _input.x * _currentSpeed, ref _xVelocity, acceleration), _rb2d.velocity.y);
+		_rb2d.velocity = new Vector2(Mathf.SmoothDamp(_rb2d.velocity.x, _input.x * _currentSpeed * _controlsDirection, ref _xVelocity, acceleration), _rb2d.velocity.y);
 		_anim.SetFloat(Speed, Mathf.Abs(_rb2d.velocity.x));
 
 		if (_coyoteTime > 0f && _jumpBuffer > 0f) {
@@ -105,13 +107,6 @@ public class PlayerController : MonoBehaviour {
 			if(_rb2d.velocity.y > 0f) _rb2d.velocity = new Vector2(_rb2d.velocity.x, _rb2d.velocity.y * gradualJumpMultiplier);
 			_cancelJump = false;
 		}
-	}
-
-	void LateUpdate() {
-		if (_dead) return;
-		
-		float yPos = _isGrounded && _rb2d.velocity.y <= 0f ? transform.position.y : _cameraTarget.position.y;
-		_cameraTarget.position = new Vector3(transform.position.x, yPos);
 	}
 
 	void OnDrawGizmosSelected() {
@@ -127,4 +122,19 @@ public class PlayerController : MonoBehaviour {
 			ScreenShake.Shake(20f, .5f);
 		}
 	}
+
+#region OrbEffects
+	int _controlsDirection = 1;
+	public void InvertControls(bool inverted) {
+		_controlsDirection = inverted ? -1 : 1;
+	}
+
+	float _defaultGravity;
+	public void ChangeGravity(float gravity) {
+		_rb2d.gravityScale = gravity;
+	}
+	public void ResetGravity() {
+		_rb2d.gravityScale = _defaultGravity;
+	}
+#endregion
 }
