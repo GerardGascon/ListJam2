@@ -9,15 +9,15 @@ using Random = UnityEngine.Random;
 
 [System.Serializable]
 public enum OrbTypes {
-	None,
-	Blue,
-	Red,
-	Purple,
-	InvertedControls,
-	HighGravity,
-	LowGravity,
-	DarkRoom,
-	Freeze
+	None = 0,
+	Blue = 1,
+	Red = 2,
+	Purple = 3,
+	InvertedControls = 4,
+	HighGravity = 5,
+	LowGravity = 6,
+	DarkRoom = 7,
+	Freeze = 8
 };
 
 public class GameManager : MonoBehaviour {
@@ -36,9 +36,8 @@ public class GameManager : MonoBehaviour {
 
 	public OrbTypes SelectRandomEffect() {
 		OrbTypes selected;
-		Array values = Enum.GetValues(typeof(OrbTypes));
 		do {
-			selected = (OrbTypes)values.GetValue(Random.Range(1, values.Length));
+			selected = (OrbTypes)Random.Range(1, 9);
 		} while (selected == currentType || selected == _lastType);
 		
 		ChangeEventCall(selected);
