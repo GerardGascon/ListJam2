@@ -5,6 +5,7 @@ using GometGames.Tools;
 using MyBox;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 [System.Serializable]
@@ -28,10 +29,29 @@ public class GameManager : MonoBehaviour {
 	OrbTypes _lastType = OrbTypes.None;
 
 	public static GameManager instance;
+
+	[Header("Clock")]
+	[SerializeField] int time = 180;
+	public float CurrentTime { private set; get; }
+	[SerializeField] int doorTime = 30;
+
+	[SerializeField] RectTransform clockPivot;
 	
 	// Start is called before the first frame update
 	void Awake() {
 		instance = this;
+	}
+
+	void Update() {
+		CurrentTime += Time.deltaTime;
+		float ratio = CurrentTime / time;
+		clockPivot.rotation = Quaternion.Euler(0f, 0f, ratio * 360f - 180f);
+		if (CurrentTime >= time - doorTime) {
+			Debug.Log("DoorOpened");
+			if (CurrentTime >= time) {
+				Debug.Log("TimesUp");
+			}
+		}
 	}
 
 	public OrbTypes SelectRandomEffect() {

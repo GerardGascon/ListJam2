@@ -544,6 +544,9 @@ MonoBehaviour:
             m_CallState: 2
     keyCollision: 0
   currentType: 0
+  time: 180
+  doorTime: 30
+  clockPivot: {fileID: 812780872}
   forceEventChangeType: 4
 --- !u!4 &75232999
 Transform:

@@ -25,7 +25,7 @@ MonoBehaviour:
     sentence: '<sp:15>One day, it went looking for treasures in some <color=#64329a>ancient
       viking ruins</color>.
 
-      And found in the deepest depths a <color=#ff8c6a>relic</color>.'
+      <p:long>And found in the deepest depths a <color=#ff8c6a>relic</color>.'
   - displayName: 0
     characterName: 
     characterImage: {fileID: 21300000, guid: 5bd48bacc85d55347908ae1d1e4a63d1, type: 3}

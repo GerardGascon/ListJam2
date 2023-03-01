@@ -62,6 +62,8 @@ public class PlayerController : MonoBehaviour {
 		//vCam.m_Follow = _cameraTarget;
 		
 		_currentSpeed = speed;
+		
+		PlayerPrefs.SetInt("OrbsFound", 0);
 	}
 
 	void Update() {
@@ -133,6 +135,9 @@ public class PlayerController : MonoBehaviour {
 			_anim.SetTrigger(Die);
 			_dead = true;
 			ScreenShake.Shake(20f, .5f);
+		}else if (col.CompareTag("Orb")) {
+			PlayerPrefs.SetInt("OrbsFound", PlayerPrefs.GetInt("OrbsFound", 0) + 1);
+			Destroy(col.gameObject);
 		}
 	}
 
