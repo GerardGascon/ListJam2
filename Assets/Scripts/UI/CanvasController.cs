@@ -26,10 +26,14 @@ public class CanvasController : MonoBehaviour {
 		
 	}
 
+	bool _abort;
+	public void AbortCoroutine() => _abort = true;
+	
 	IEnumerator Countdown() {
 		for (int i = 0; i < 10; ++i) {
 			orb.sprite = orbCountdown[i];
 			yield return new WaitForSeconds(1f);
+			if (_abort) yield break;
 		}
 
 		_effectImage.sprite = effectSprites[(int)GameManager.instance.SelectRandomEffect() - 1];

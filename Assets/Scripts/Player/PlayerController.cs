@@ -2,10 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using DG.Tweening;
 using MyBox;
+using SimpleTools.AudioManager;
 using SimpleTools.Cinemachine;
+using SimpleTools.SceneManagement;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
@@ -66,6 +70,15 @@ public class PlayerController : MonoBehaviour {
 		PlayerPrefs.SetInt("OrbsFound", 0);
 	}
 
+	Coroutine _stepsRoutine;
+
+	IEnumerator Steps() {
+		while (true) {
+			yield return new WaitForSeconds(.25f);
+			AudioManager.instance.PlayOneShot("Pasos");
+		}
+	}
+
 	void Update() {
 		Vector3 localScale;
 		if (_dead) {
@@ -93,6 +106,21 @@ public class PlayerController : MonoBehaviour {
 		_anim.SetBool(Grounded, _isGrounded);
 		if (_isGrounded && _rb2d.velocity.y <= 0f) _coyoteTime = coyoteTime;
 		
+		if (_isGrounded) {
+			switch (Mathf.Abs(_input.x)) {
+				case > 0f when _stepsRoutine == null:
+					_stepsRoutine = StartCoroutine(Steps());
+					break;
+				case 0f when _stepsRoutine != null:
+					StopCoroutine(_stepsRoutine);
+					_stepsRoutine = null;
+					break;
+			}
+		}else if (_stepsRoutine != null) {
+			StopCoroutine(_stepsRoutine);
+			_stepsRoutine = null;
+		}
+		
 		if (Input.GetKeyDown(KeyCode.Space)) _jumpBuffer = jumpBuffer;
 		if (Input.GetKeyUp(KeyCode.Space)) _cancelJump = true;
 
@@ -115,6 +143,7 @@ public class PlayerController : MonoBehaviour {
 		if (_coyoteTime > 0f && _jumpBuffer > 0f) {
 			_rb2d.velocity = new Vector2(_rb2d.velocity.x, 0f);
 			_rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+			AudioManager.instance.PlayOneShot("Jump");
 			_coyoteTime = _jumpBuffer = 0f;
 		}
 
@@ -131,14 +160,43 @@ public class PlayerController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.CompareTag("Ghost")) {
-			col.GetComponent<GhostController>().Kill();
-			_anim.SetTrigger(Die);
-			_dead = true;
-			ScreenShake.Shake(20f, .5f);
+			Kill(col.GetComponent<GhostController>());
 		}else if (col.CompareTag("Orb")) {
+			AudioManager.instance.PlayOneShot("Orbe");
 			PlayerPrefs.SetInt("OrbsFound", PlayerPrefs.GetInt("OrbsFound", 0) + 1);
 			Destroy(col.gameObject);
+		}else if (col.CompareTag("Door")) {
+			StartCoroutine(Win(FindObjectOfType<GhostController>()));
 		}
+	}
+
+	bool _won;
+	[SerializeField] Image fadeImage;
+	IEnumerator Win(GhostController ghost) {
+		if (_dead || _won) yield break;
+		_won = true;
+		ghost.Kill();
+		if(_stepsRoutine != null) StopCoroutine(_stepsRoutine);
+		fadeImage.DOFade(1, 1f);
+		yield return new WaitForSeconds(1f);
+		AudioManager.instance.FadeOut("Viento", 1f);
+		Loader.Load(3);
+	}
+
+	[SerializeField] CanvasGroup group;
+	public void Kill(GhostController ghost) {
+		if (_dead || _won) return;
+		AudioManager.instance.PlayOneShot("Congela");
+		ghost.Kill();
+		if(_stepsRoutine != null) StopCoroutine(_stepsRoutine);
+		group.DOFade(1, 1f);
+		group.interactable = true;
+		
+		GameManager.instance.DisableManager();
+		
+		_anim.SetTrigger(Die);
+		_dead = true;
+		ScreenShake.Shake(20f, .5f);
 	}
 
 #region OrbEffects

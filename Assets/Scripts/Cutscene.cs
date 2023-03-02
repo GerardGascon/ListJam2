@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using MyBox;
 using SimpleTools.DialogueSystem;
+using SimpleTools.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,6 +31,7 @@ public class Cutscene : MonoBehaviour {
 			_start = Time.time;
 			yield return new WaitForSeconds(fadeDuration);
 		}
+		Loader.Load(2);
 	}
 
 	float _start;

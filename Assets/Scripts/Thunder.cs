@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using SimpleTools.AudioManager;
 using SimpleTools.Cinemachine;
 using UnityEngine;
 
@@ -46,6 +47,7 @@ public class Thunder : MonoBehaviour{
     private void LightningStrike(){
         //ScreenshakeHandler.AddScreenShake(5, 5, 0.5f);
         ScreenShake.Shake(15, .5f);
+        AudioManager.instance.PlayOneShot($"Trueno{Random.Range(1, 4)}");
 
         //thunderSound.pitch = Random.Range(0.5f, 1f);
         //thunderSound.Play();
