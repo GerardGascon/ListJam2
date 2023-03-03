@@ -114,3 +114,84 @@ MonoBehaviour:
     pitchVariance: 0
     loop: 0
     source: {fileID: 0}
+  - name: alta
+    clip: {fileID: 8300000, guid: 060e1bc6145f114469e4312918bfc938, type: 3}
+    type: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: ambos
+    clip: {fileID: 8300000, guid: ee06e4a2058e2734383fb169ad3645be, type: 3}
+    type: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: azul
+    clip: {fileID: 8300000, guid: 7829b038dd09e2447809b75b3def0949, type: 3}
+    type: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: baja
+    clip: {fileID: 8300000, guid: 8daea4f4eba9f9541802ec5b66ef9bee, type: 3}
+    type: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: hielo
+    clip: {fileID: 8300000, guid: fb985c8c6b305e04498266a627672f51, type: 3}
+    type: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: intro
+    clip: {fileID: 8300000, guid: 300a1be276b9ceb48bbcdc06648fc3b8, type: 3}
+    type: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: invertido
+    clip: {fileID: 8300000, guid: 1433ff3a5fe05704d86d24aef8429be5, type: 3}
+    type: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: oscuro
+    clip: {fileID: 8300000, guid: eb5c18acaee4a6446bcf8a9d83bbcb24, type: 3}
+    type: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: rojo
+    clip: {fileID: 8300000, guid: 7b9e4bcfb7166be40add7539203203bd, type: 3}
+    type: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}

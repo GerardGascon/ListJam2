@@ -7,7 +7,7 @@ using UnityEngine;
 public class SceneLoad : MonoBehaviour{
 
 	public void LoadScene(int sceneIndex) {
-		AudioManager.instance.FadeOut("Viento", 1f);
+		AudioManager.instance.StopAll();
 		Loader.Load(sceneIndex);
 	}
 }

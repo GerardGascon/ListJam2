@@ -63,7 +63,6 @@ public class GameManager : MonoBehaviour {
 			if (!_doorOpened) {
 				_doorOpened = true;
 				AudioManager.instance.Play("Puerta");
-				AudioManager.instance.FadeOut("Puerta", 1f);
 				doorOpenEvent.Invoke();
 			}
 			if (CurrentTime >= time && !_dead) {

@@ -2093,7 +2093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd2f647ee7b470488f36b4c923f42e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPosition: {x: 0, y: 16}
+  endPosition: {x: 0, y: 17}
   moveTime: 3
   stopDuration: 2
 --- !u!212 &182317458
@@ -4018,7 +4018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endPosition: {x: 0, y: -16}
   moveTime: 3
-  stopDuration: 1
+  stopDuration: 2
 --- !u!212 &486154738
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4358,10 +4358,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.07075263
+    x: 0.06953437
     y: 0
-    width: 0.85809964
-    height: 0.999636
+    width: 0.8611618
+    height: 1.0003641
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -5431,7 +5431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   player: {fileID: 832780277}
-  accelerationPower: 10
+  accelerationPower: 20
 --- !u!1 &690816255
 GameObject:
   m_ObjectHideFlags: 0

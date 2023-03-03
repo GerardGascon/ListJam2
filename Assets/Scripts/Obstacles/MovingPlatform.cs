@@ -31,7 +31,7 @@ public class MovingPlatform : MonoBehaviour {
 		yield return new WaitForFixedUpdate();
 		transform.position = Vector3.MoveTowards(transform.position, _end, _speed * Time.deltaTime);
 
-		if (Math.Abs(transform.position.sqrMagnitude - _end.sqrMagnitude) < 0.05f) {
+		if (((Vector2)transform.position - _end).sqrMagnitude < 0.05f) {
 			_swapRoutine ??= StartCoroutine(SwapCoordinates());
 		}
 	}
