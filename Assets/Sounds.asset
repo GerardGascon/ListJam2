@@ -195,3 +195,30 @@ MonoBehaviour:
     pitchVariance: 0
     loop: 0
     source: {fileID: 0}
+  - name: gameOver
+    clip: {fileID: 8300000, guid: 7ad8095769c191d4b8b32ff4457745db, type: 3}
+    type: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: menu
+    clip: {fileID: 8300000, guid: 6525d245e5e1be040852edaeeb9923bc, type: 3}
+    type: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: victoria
+    clip: {fileID: 8300000, guid: 3e348e8acc8161d499c279e87ab9f5bb, type: 3}
+    type: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    source: {fileID: 0}

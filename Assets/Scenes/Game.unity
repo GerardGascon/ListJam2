@@ -4360,8 +4360,8 @@ Camera:
     serializedVersion: 2
     x: 0.06953437
     y: 0
-    width: 0.8611618
-    height: 1.0003641
+    width: 0.86053514
+    height: 0.999636
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -37910,6 +37910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 775b962b28fe0d149927748937e2e8c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stopMusic: 1
 --- !u!1 &1703826472
 GameObject:
   m_ObjectHideFlags: 0

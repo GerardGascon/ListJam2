@@ -4,10 +4,12 @@ using SimpleTools.AudioManager;
 using SimpleTools.SceneManagement;
 using UnityEngine;
 
-public class SceneLoad : MonoBehaviour{
+public class SceneLoad : MonoBehaviour {
 
+	[SerializeField] bool stopMusic = true;
+	
 	public void LoadScene(int sceneIndex) {
-		AudioManager.instance.StopAll();
+		if(stopMusic) AudioManager.instance.StopAll();
 		Loader.Load(sceneIndex);
 	}
 }

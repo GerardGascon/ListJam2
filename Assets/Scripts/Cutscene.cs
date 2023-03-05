@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using MyBox;
+using SimpleTools.AudioManager;
 using SimpleTools.DialogueSystem;
 using SimpleTools.SceneManagement;
 using UnityEngine;
@@ -31,6 +32,7 @@ public class Cutscene : MonoBehaviour {
 			_start = Time.time;
 			yield return new WaitForSeconds(fadeDuration);
 		}
+		AudioManager.instance.Stop("menu");
 		Loader.Load(2);
 	}
 

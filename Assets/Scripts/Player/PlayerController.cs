@@ -178,6 +178,16 @@ public class PlayerController : MonoBehaviour {
 		ghost.Kill();
 		if(_stepsRoutine != null) StopCoroutine(_stepsRoutine);
 		fadeImage.DOFade(1, 1f);
+		AudioManager.instance.FadeOut("intro", 1f);
+		AudioManager.instance.FadeOut("azul", 1f);
+		AudioManager.instance.FadeOut("rojo", 1f);
+		AudioManager.instance.FadeOut("ambos", 1f);
+		AudioManager.instance.FadeOut("invertido", 1f);
+		AudioManager.instance.FadeOut("alta", 1f);
+		AudioManager.instance.FadeOut("baja", 1f);
+		AudioManager.instance.FadeOut("oscuro", 1f);
+		AudioManager.instance.FadeOut("rojo", 1f);
+		AudioManager.instance.FadeIn("victoria", 1f);
 		yield return new WaitForSeconds(1f);
 		AudioManager.instance.FadeOut("Viento", 1f);
 		Loader.Load(3);
@@ -187,6 +197,16 @@ public class PlayerController : MonoBehaviour {
 	public void Kill(GhostController ghost) {
 		if (_dead || _won) return;
 		AudioManager.instance.PlayOneShot("Congela");
+		AudioManager.instance.FadeOut("intro", 1f);
+		AudioManager.instance.FadeOut("azul", 1f);
+		AudioManager.instance.FadeOut("rojo", 1f);
+		AudioManager.instance.FadeOut("ambos", 1f);
+		AudioManager.instance.FadeOut("invertido", 1f);
+		AudioManager.instance.FadeOut("alta", 1f);
+		AudioManager.instance.FadeOut("baja", 1f);
+		AudioManager.instance.FadeOut("oscuro", 1f);
+		AudioManager.instance.FadeOut("rojo", 1f);
+		AudioManager.instance.Play("gameOver");
 		ghost.Kill();
 		if(_stepsRoutine != null) StopCoroutine(_stepsRoutine);
 		group.DOFade(1, 1f);
